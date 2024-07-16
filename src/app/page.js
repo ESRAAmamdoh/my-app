@@ -30,7 +30,7 @@ export default function Home() {
   }, [])
 
 
-if(data && !isLoading){
+if(data && !isLoading){ 
 
   const customersList=data.customers;
   const transactionsList= data.transactions;
