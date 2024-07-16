@@ -1,6 +1,6 @@
 "use client"
-import {customersList,transactionsList} from "@/api/api"
-import { useState } from "react";
+
+import { useState, useEffect } from "react";
 
 
 
@@ -17,9 +17,23 @@ var groupBy = function(xs, key) {
 };
 
 export default function Home() {
-  const [filterId,setFilterId] = useState()
+  const [filterId,setFilterId] = useState();
+  const [data, setData] = useState(null);
+  const [isLoading, setLoading] = useState(true);
+  useEffect(() => {
+    fetch('http://localhost:8000/users')
+      .then((res) => res.json())
+      .then((data) => {
+        setData(data)
+        setLoading(false)
+      })
+  }, [])
 
 
+if(data && !isLoading){
+
+  const customersList=data.customers;
+  const transactionsList= data.transactions;
   const filterCostomerId= transactionsList.filter((el) => el.customer_id==filterId );
   const filterCostomerName= customersList.find((el) => el.id==filterId )?.name;
 
@@ -62,5 +76,9 @@ export default function Home() {
       </div>
       </div>
    </>
-  );
+  );}
+  return (
+    <>
+    </>
+  )
 }
