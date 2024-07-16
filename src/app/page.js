@@ -45,13 +45,13 @@ export default function Home() {
   return (
    <>
 
-<div className="w-3/4 ">
+<div className="lg:w-3/4 sm:w-full ">
    <h1 className="text-center mt-[2rem] text-2xl font-bold text-white">Transactions Dashboard</h1>
-      <div className="customers flex flex-col items-center justify-center py-[5rem]">
+      <div className="customers  flex flex-col items-center justify-center pt-[5rem]">
   
               
         <ComboBox filterId={filterId} setFilterId={setFilterId}  customersList={customersList} />
-       {  filterId&&  <div className="flex justify-between items-center mt-[10rem]  w-full">
+       {  filterId&&  <div className="flex lg:flex-row flex-col justify-between items-center mt-[10rem]  w-full">
 
       <TableComponent filterCostomerId={filterCostomerId} amounts={amounts} filterCostomerName={filterCostomerName} />
 

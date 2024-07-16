@@ -13,7 +13,7 @@ import {
    
 export default function TableComponent(props) {
   return (
-    <>
+    <div className='w-3/4 sm:mb-9'>
       <Table>
       <TableCaption>A list of your recent transactions.</TableCaption>
       <TableHeader>
@@ -41,6 +41,6 @@ export default function TableComponent(props) {
         </TableRow>
       </TableFooter>
     </Table> 
-    </>
+    </div>
   )
 }
