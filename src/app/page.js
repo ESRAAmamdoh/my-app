@@ -46,7 +46,7 @@ export default function Home() {
    <>
 
 <div className="w-3/4 ">
-   <h1 className="text-center mt-[2rem] text-2xl font-bold">transactions Dashboard</h1>
+   <h1 className="text-center mt-[2rem] text-2xl font-bold text-white">Transactions Dashboard</h1>
       <div className="customers flex flex-col items-center justify-center py-[5rem]">
   
               
